@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Disable zooming -->
+  <title>About</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden; /* Prevent scrolling */
+      background-color: #000; /* Fallback background */
+      background-image: url('https://iili.io/3zv49pa.jpg'); /* Background image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      touch-action: manipulation; /* Disable pinch-zooming */
+    }
+
+    h1 {
+      font-size: 3em;
+      text-align: center;
+      margin-bottom: 20px;
+      animation: glow 2s infinite alternate; /* Neon glow effect */
+    }
+
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00;
+      }
+      100% {
+        text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 40px #00ff00, 0 0 80px #00ff00;
+      }
+    }
+
+    .scrolling-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .scrolling-text p {
+      font-size: 1.2em;
+      margin: 10px 0;
+      line-height: 1.5;
+      opacity: 0; /* Start with text invisible */
+      animation: swipeIn 1s forwards; /* Animation to swipe in text */
+    }
+
+    @keyframes swipeIn {
+      from {
+        transform: translateX(-100%); /* Start from left */
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0); /* End at original position */
+        opacity: 1;
+      }
+    }
+
+    /* Delay each line's animation */
+    .scrolling-text p:nth-child(1) { animation-delay: 0.5s; }
+    .scrolling-text p:nth-child(2) { animation-delay: 1s; }
+    .scrolling-text p:nth-child(3) { animation-delay: 1.5s; }
+    .scrolling-text p:nth-child(4) { animation-delay: 2s; }
+    .scrolling-text p:nth-child(5) { animation-delay: 2.5s; }
+    .scrolling-text p:nth-child(6) { animation-delay: 3s; }
+    .scrolling-text p:nth-child(7) { animation-delay: 3.5s; }
+    .scrolling-text p:nth-child(8) { animation-delay: 4s; }
+    .scrolling-text p:nth-child(9) { animation-delay: 4.5s; }
+    .scrolling-text p:nth-child(10) { animation-delay: 5s; }
+    .scrolling-text p:nth-child(11) { animation-delay: 5.5s; }
+    .scrolling-text p:nth-child(12) { animation-delay: 6s; }
+    .scrolling-text p:nth-child(13) { animation-delay: 6.5s; }
+    .scrolling-text p:nth-child(14) { animation-delay: 7s; }
+    .scrolling-text p:nth-child(15) { animation-delay: 7.5s; }
+    .scrolling-text p:nth-child(16) { animation-delay: 8s; }
+    .scrolling-text p:nth-child(17) { animation-delay: 8.5s; }
+    .scrolling-text p:nth-child(18) { animation-delay: 9s; }
+    .scrolling-text p:nth-child(19) { animation-delay: 9.5s; }
+    .scrolling-text p:nth-child(20) { animation-delay: 10s; }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      font-size: 1.5em;
+      font-family: 'Pacifico', cursive; /* Fancy font */
+      color: #ffcc00; /* Gold color */
+      text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00; /* Glow effect */
+    }
+
+    /* Import Google Font for fancy footer text */
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+  </style>
+</head>
+<body>
+  <h1>WELCOME TO OUR WEBSITE</h1>
+  <div class="scrolling-text">
+    <p>We are dedicated to empowering our fellow students by providing PDF notes</p>
+    <p>and over 55% accurate worked out assignment CATs. Our mission is to</p>
+    <p>support students in excelling in their coursework and achieving their</p>
+    <p>academic goals. Our platform incorporates advanced techniques to ensure</p>
+    <p>assignments generated are AI bypassed and are indistinguishable</p>
+    <p>from human written work, helping you submit confidently without raising</p>
+    <p>red flags. LET'S REDEFINE LEARNING TOGETHER, SMARTER, FASTER AND MORE</p>
+    <p>EFFICIENTLY.</p>
+    <p>We are dedicated to empowering our fellow students by providing PDF notes</p>
+    <p>and over 55% accurate worked out assignment CATs. Our mission is to</p>
+    <p>support students in excelling in their coursework and achieving their</p>
+    <p>academic goals. Our platform incorporates advanced techniques to ensure</p>
+    <p>assignments generated are AI bypassed and are indistinguishable</p>
+    <p>from human written work, helping you submit confidently without raising</p>
+    <p>red flags. LET'S REDEFINE LEARNING TOGETHER, SMARTER, FASTER AND MORE</p>
+    <p>EFFICIENTLY.</p>
+    <p>We are dedicated to empowering our fellow students by providing PDF notes</p>
+    <p>and over 55% accurate worked out assignment CATs. Our mission is to</p>
+    <p>support students in excelling in their coursework and achieving their</p>
+    <p>academic goals. Our platform incorporates advanced techniques to ensure</p>
+    <p>assignments generated are AI bypassed and are indistinguishable</p>
+    <p>from human written work, helping you submit confidently without raising</p>
+    <p>red flags. LET'S REDEFINE LEARNING TOGETHER, SMARTER, FASTER AND MORE</p>
+    <p>EFFICIENTLY.</p>
+    <p>We are dedicated to empowering our fellow students by providing PDF notes</p>
+    <p>and over 55% accurate worked out assignment CATs. Our mission is to</p>
+    <p>support students in excelling in their coursework and achieving their</p>
+    <p>academic goals. Our platform incorporates advanced techniques to ensure</p>
+    <p>assignments generated are AI bypassed and are indistinguishable</p>
+    <p>from human written work, helping you submit confidently without raising</p>
+    <p>red flags. LET'S REDEFINE LEARNING TOGETHER, SMARTER, FASTER AND MORE</p>
+    <p>EFFICIENTLY.</p>
+  </div>
+  <footer>WELCOME TO THE WORLD OF EDUCATION</footer>
+</body>
+</html>

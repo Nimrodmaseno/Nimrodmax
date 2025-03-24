@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>CAT ANSWERS</title>
+    <style>
+        body {
+            background-color: #E6E6FA; /* Light purple background */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; /* Align content to the top */
+            height: 100vh;
+            overflow: hidden;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #4B0082; /* Indigo color for contrast */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin-top: 20px; /* Move heading near the top margin */
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+        ul li {
+            margin: 15px 0;
+            opacity: 0; /* Initially hide list items */
+            transform: translateY(20px); /* Start slightly below */
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        footer {
+            position: absolute;
+            bottom: 10px;
+            font-size: 0.9rem;
+            color: #4B0082; /* Indigo color for footer */
+        }
+    </style>
+</head>
+<body>
+    <h1>CAT ANSWERS</h1>
+    <ul>
+        <li><a href="engineering_maths_cat.html">Engineering Maths CAT</a></li>
+        <li><a href="discrete_structures_2_cat.html">Discrete Structures 2 CAT</a></li>
+        <li><a href="object_oriented_programming_cat.html">Object Oriented Programming CAT</a></li>
+        <li><a href="database_systems_cat.html">Database Systems CAT</a></li>
+        <li><a href="electronics_2_cat.html">Electronics 2 CAT</a></li>
+        <li><a href="digital_electronics_1_lab.html">Digital Electronics 1 Lab</a></li>
+        <li><a href="probability_distribution_theory_cat.html">Probability Distribution Theory CAT</a></li>
+    </ul>
+    <footer>@NIMROD 2025</footer>
+
+    <script>
+        // Function to make list items pop up one by one
+        function popUpListItems() {
+            const listItems = document.querySelectorAll('ul li');
+            let delay = 0;
+
+            listItems.forEach((item) => {
+                setTimeout(() => {
+                    item.style.opacity = 1; // Make item visible
+                    item.style.transform = 'translateY(0)'; // Move item to its original position
+                }, delay);
+                delay += 2000; // Add 2 seconds delay for each item
+            });
+        }
+
+        // Call the function when the page loads
+        window.onload = popUpListItems;
+    </script>
+</body>
+</html>

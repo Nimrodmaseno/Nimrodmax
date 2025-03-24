@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=0.8, user-scalable=no">
+    <title>Login Page</title>
+    <style>
+        body {
+            background-image: url('https://iili.io/3z4Hyvt.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background: #0056b3;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="validateLogin()">Login</button>
+        <p class="error-message" id="errorMessage"></p>
+    </div>
+
+    <script>
+        // Hardcoded usernames and passwords
+        const users = [
+            { username: "CCT/00001/024", password: "CCT/00001/024" },
+            { username: "CCT/00002/024", password: "CCT/00002/024" },
+            { username: "CCT/00003/024", password: "CCT/00003/024" },
+            { username: "CCT/00004/024", password: "CCT/00004/024" },
+            { username: "CCT/00005/024", password: "CCT/00005/024" },
+            { username: "CCT/00006/024", password: "CCT/00006/024" },
+            { username: "CCT/00007/024", password: "CCT/00007/024" },
+            { username: "CCT/00008/024", password: "CCT/00008/024" },
+            { username: "CCT/00009/024", password: "CCT/00009/024" },
+            { username: "CCT/00010/024", password: "CCT/00010/024" },
+            { username: "CCT/00011/024", password: "CCT/00011/024" },
+            { username: "CCT/00012/024", password: "CCT/00012/024" },
+            { username: "CCT/00013/024", password: "CCT/00013/024" },
+            { username: "CCT/00014/024", password: "CCT/00014/024" },
+            { username: "CCT/00015/024", password: "CCT/00015/024" },
+            { username: "CCT/00016/024", password: "CCT/00016/024" },
+            { username: "CCT/00017/024", password: "CCT/00017/024" },
+            { username: "CCT/00018/024", password: "CCT/00018/024" },
+            { username: "CCT/00019/024", password: "CCT/00019/024" },
+            { username: "CCT/00020/024", password: "CCT/00020/024" },
+            { username: "CCT/00021/024", password: "CCT/00021/024" },
+            { username: "CCT/00022/024", password: "CCT/00022/024" },
+            { username: "CCT/00023/024", password: "CCT/00023/024" },
+            { username: "CCT/00024/024", password: "CCT/00024/024" },
+            { username: "CCT/00025/024", password: "CCT/00025/024" },
+            { username: "CCT/00026/024", password: "CCT/00026/024" },
+            { username: "CCT/00027/024", password: "CCT/00027/024" },
+            { username: "CCT/00028/024", password: "CCT/00028/024" },
+            { username: "CCT/00029/024", password: "CCT/00029/024" },
+            { username: "CCT/00030/024", password: "CCT/00030/024" },
+            { username: "CCT/00031/024", password: "CCT/00031/024" },
+            { username: "CCT/00032/024", password: "CCT/00032/024" },
+            { username: "CCT/00033/024", password: "CCT/00033/024" },
+            { username: "CCT/00034/024", password: "CCT/00034/024" },
+            { username: "CCT/00035/024", password: "CCT/00035/024" },
+            { username: "CCT/00036/024", password: "CCT/00036/024" },
+            { username: "CCT/00037/024", password: "CCT/00037/024" },
+            { username: "CCT/00038/024", password: "CCT/00038/024" },
+            { username: "CCT/00039/024", password: "CCT/00039/024" },
+            { username: "CCT/00040/024", password: "CCT/00040/024" },
+            { username: "CCT/00041/024", password: "CCT/00041/024" },
+            { username: "CCT/00042/024", password: "CCT/00042/024" },
+            { username: "CCT/00043/024", password: "CCT/00043/024" },
+            { username: "CCT/00044/024", password: "CCT/00044/024" },
+            { username: "CCT/00045/024", password: "CCT/00045/024" },
+            { username: "CCT/00046/024", password: "CCT/00046/024" },
+            { username: "CCT/00047/024", password: "CCT/00047/024" },
+            { username: "CCT/00048/024", password: "CCT/00048/024" },
+            { username: "CCT/00049/024", password: "CCT/00049/024" },
+            { username: "CCT/00050/024", password: "CCT/00050/024" },
+            { username: "CCT/00051/024", password: "CCT/00051/024" },
+            { username: "CCT/00052/024", password: "CCT/00052/024" },
+            { username: "CCT/00053/024", password: "CCT/00053/024" },
+            { username: "CCT/00054/024", password: "CCT/00054/024" },
+            { username: "CCT/00055/024", password: "CCT/00055/024" },
+            { username: "CCT/00056/024", password: "CCT/00056/024" },
+            { username: "CCT/00057/024", password: "CCT/00057/024" },
+            { username: "CCT/00058/024", password: "CCT/00058/024" },
+            { username: "CCT/00059/024", password: "CCT/00059/024" },
+            { username: "CCT/00060/024", password: "CCT/00060/024" },
+            { username: "CCT/00061/024", password: "CCT/00061/024" },
+            { username: "CCT/00062/024", password: "CCT/00062/024" },
+            { username: "CCT/00063/024", password: "CCT/00063/024" },
+            { username: "CCT/00064/024", password: "CCT/00064/024" },
+            { username: "CCT/00065/024", password: "CCT/00065/024" },
+            { username: "CCT/00066/024", password: "CCT/00066/024" },
+            { username: "CCT/00067/024", password: "CCT/00067/024" },
+            { username: "CCT/00068/024", password: "CCT/00068/024" },
+            { username: "CCT/00069/024", password: "CCT/00069/024" },
+            { username: "CCT/00070/024", password: "CCT/00070/024" },
+            { username: "CCT/00071/024", password: "CCT/00071/024" },
+            { username: "CCT/00072/024", password: "CCT/00072/024" },
+            { username: "CCT/00073/024", password: "CCT/00073/024" },
+            { username: "CCT/00074/024", password: "CCT/00074/024" },
+            { username: "CCT/00075/024", password: "CCT/00075/024" },
+            { username: "CCT/00076/024", password: "CCT/00076/024" },
+            { username: "CCT/00077/024", password: "CCT/00077/024" },
+            { username: "CCT/00078/024", password: "CCT/00078/024" },
+            { username: "CCT/00079/024", password: "CCT/00079/024" },
+            { username: "CCT/00080/024", password: "CCT/00080/024" }
+        ];
+
+        function validateLogin() {
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const errorMessage = document.getElementById("errorMessage");
+
+            const user = users.find(u => u.username === username && u.password === password);
+
+            if (user) {
+                errorMessage.textContent = "Login successful!";
+                errorMessage.style.color = "green";
+                // Redirect to index.html after successful login
+                window.location.href = "index.html";
+            } else {
+                errorMessage.textContent = "Invalid username or password.";
+                errorMessage.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

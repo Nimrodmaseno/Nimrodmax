@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=0.8, user-scalable=no">
+    <title>Home - Bsc. COMPUTER TECHNOLOGY</title>
+    <style>
+        /* Disable zooming on touch devices */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100vh;
+            background-color: #6a0dad;
+            background-image: url('https://iili.io/3zv4kua.jpg'), url('https://iili.io/3zv4kua.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            overflow: hidden;
+            touch-action: manipulation;
+        }
+
+        /* Snowfall animation */
+        .snowflake {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            user-select: none;
+            pointer-events: none;
+            animation: snowfall linear infinite;
+        }
+
+        @keyframes snowfall {
+            to {
+                transform: translateY(100vh);
+            }
+        }
+
+        /* Circular icon container */
+        .icon-container {
+            width: 43.75px;
+            height: 43.75px;
+            border-radius: 50%;
+            background-color: #ccc;
+            position: relative;
+            margin-top: 10px;
+            margin-left: 20px;
+            overflow: hidden;
+        }
+
+        /* Small green dot */
+        .green-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #00ff00;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            border: 2px solid white;
+        }
+
+        /* Heading styling */
+        h1 {
+            color: white;
+            font-size: 28px;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* File input styling */
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Upload button styling */
+        .upload-button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+
+        .upload-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Hide the upload button */
+        .upload-button.hidden {
+            display: none;
+        }
+
+        /* User greeting text */
+        .user-greeting {
+            color: white;
+            font-size: 18px;
+            margin-left: 10px;
+            align-self: center;
+        }
+
+        /* Menu icons container */
+        .menu-icons {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            margin-top: 30px;
+            margin-left: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Menu icon styling */
+        .menu-icon {
+            width: 63px;
+            height: 63px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-icon:hover {
+            background-color: #0056b3;
+        }
+
+        /* Menu icon image styling */
+        .menu-icon img {
+            width: 31.5px;
+            height: 31.5px;
+            margin-bottom: 5px;
+        }
+
+        /* Square icon styling */
+        .square-icon {
+            width: 63px;
+            height: 63px;
+            border-radius: 15px;
+            background-color: #007bff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .square-icon:hover {
+            background-color: #0056b3;
+        }
+
+        /* Square icon image styling */
+        .square-icon img {
+            width: 31.5px;
+            height: 31.5px;
+            margin-bottom: 5px;
+        }
+
+        /* Footer styling */
+        footer {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Heading -->
+    <h1>Bsc. COMPUTER TECHNOLOGY</h1>
+
+    <!-- User icon and greeting -->
+    <div style="display: flex; align-items: center;">
+        <!-- Circular icon with green dot -->
+        <div class="icon-container" id="icon-container">
+            <div class="green-dot"></div>
+        </div>
+        <!-- Greeting text -->
+        <span class="user-greeting">Hi! User</span>
+    </div>
+
+    <!-- Upload button -->
+    <label for="upload-input" class="upload-button" id="upload-button">Upload Image</label>
+    <input type="file" id="upload-input" accept="image/*" onchange="handleImageUpload(event)">
+
+    <!-- Menu icons with images and text -->
+    <div class="menu-icons">
+        <!-- Circular icons -->
+        <a href="pdf_notes.html">
+            <div class="menu-icon">
+                <img src="/storage/emulated/0/Pictures/Screenshot/Screenshot_20250321-161526.jpg" alt="PDF Notes">
+                <span>PDF NOTES</span>
+            </div>
+        </a>
+        <a href="assignment_cats.html">
+            <div class="menu-icon">
+                <img src="/storage/emulated/0/BM5/Screenshot_20250321-161648.jpg" alt="Assignment CATs">
+                <span>ASSIGNMENT CATS</span>
+            </div>
+        </a>
+        <a href="announcements.html">
+            <div class="menu-icon">
+                <img src="https://iili.io/3IAAiX9.jpg" alt="Screenshot 20250323 194435">
+                <span>MSU PAPERS</span>
+            </div>
+        </a>
+
+        <!-- Square icons -->
+        <a href="Engmaths2.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4V6B9.jpg" alt="ENG.MATHS 2">
+                <span>ENG.MATHS 2</span>
+            </div>
+        </a>
+        <a href="discrete_structures_2.html">
+            <div class="square-icon">
+                <img src="path_to_image_2.png" alt="DISCRETE STRUCTURES 2">
+                <span>DISCRETE STRUCTURES 2</span>
+            </div>
+        </a>
+        <a href="oop_1_java.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4MTMX.jpg" alt="OOP 1 (JAVA)">
+                <span>OOP 1 (JAVA)</span>
+            </div>
+        </a>
+        <a href="database_systems.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4G83G.jpg" alt="DATABASE SYSTEMS">
+                <span>DATABASE SYSTEMS</span>
+            </div>
+        </a>
+        <a href="electronics_2.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4G9Bn.jpg" alt="ELECTRONICS 2">
+                <span>ELECTRONICS 2</span>
+            </div>
+        </a>
+        <a href="digital_electronics_1_lab.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4EHHQ.jpg" alt="DIGITAL ELECTRONICS 1 LAB">
+                <span>DIGITAL ELECTRONICS 1 LAB</span>
+            </div>
+        </a>
+        <a href="prob_distr_theory.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z45x1V.jpg" alt="PROB.DISTR THEORY">
+                <span>PROB.DISTR THEORY</span>
+            </div>
+        </a>
+
+        <!-- New Digital Logics Icon -->
+        <a href="digital_logics.html">
+            <div class="square-icon">
+                <img src="https://iili.io/3z4vYQx.jpg" alt="DIGITAL LOGICS">
+                <span>DIGITAL LOGICS</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        MADE FOR COMPUTER TECHNOLOGY STUDENTS
+    </footer>
+
+    <script>
+        // Function to handle image upload
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const iconContainer = document.getElementById('icon-container');
+                    iconContainer.style.backgroundImage = `url(${e.target.result})`;
+                    iconContainer.style.backgroundSize = 'cover';
+
+                    const uploadButton = document.getElementById('upload-button');
+                    uploadButton.classList.add('hidden');
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Snowfall effect
+        const snowflakes = [];
+        const snowflakeCount = 100;
+
+        for (let i = 0; i < snowflakeCount; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.textContent = '❄';
+            snowflake.classList.add('snowflake');
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's'; // Random fall speed
+            snowflake.style.animationDelay = Math.random() * 5 + 's'; // Random delay
+            document.body.appendChild(snowflake);
+            snowflakes.push(snowflake);
+        }
+    </script>
+</body>
+</html>
